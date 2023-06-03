@@ -66,11 +66,11 @@
                 <h1 class="font-estetik my-4" style="font-size: 2.2rem;">Undangan Pernikahan</h1>
                 <div class="py-4">
                     <div class="cropper border border-3 border-light shadow mx-auto">
-                        <img src="assets/images/bg.jpeg" alt="bg">
+                        <img src="assets/images/bg.jpg" alt="bg">
                     </div>
                 </div>
-                <h1 class="font-estetik my-4" style="font-size: 3rem;">Wahyu & Riski</h1>
-                <h4>Rabu, 15 Maret 2023</h4>
+                <h1 class="font-estetik my-4" style="font-size: 3rem;">Cahyo & Retno</h1>
+                <h4>Senin, 3 Juli 2023</h4>
                 <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-1" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Wahyu%20and%20Riski&details=The%20Wedding%20of%20Wahyu%20and%20Riski%20%7C%2015%20Maret%202023%20%7C%20RT%2010%20RW%2002,%20Desa%20Pajerukan,%20Kec.%20Kalibagor,%20Kab.%20Banyumas,%20Jawa%20Tengah%2053191%20%7C%2010.00%20-%2011.00%20WIB&dates=20230315T100000/20230315T110000&location=https://goo.gl/maps/ALZR6FJZU3kxVwN86">
                     <i class="fa-solid fa-calendar-check me-2"></i>Save The Date
                 </a>
@@ -96,9 +96,9 @@
                         <div class="cropper border border-3 border-light shadow my-4 mx-auto">
                             <img src="assets/images/cowo.png" alt="bg">
                         </div>
-                        <h1 class="font-estetik" style="font-size: 3rem;">Wahyu Siapa</h1>
+                        <h1 class="font-estetik" style="font-size: 3rem;">Lian Cahyo Wijaya</h1>
                         <h5 class="mt-3 mb-0">Putra</h5>
-                        <p class="mb-0">Bapak ... & Ibu ...</p>
+                        <p class="mb-0">Bapak Helia Subarkah & Ibu Anik Suhartini</p>
                     </div>
 
                     <h1 class="font-estetik my-4" style="font-size: 4rem;">&</h1>
@@ -107,9 +107,9 @@
                         <div class="cropper border border-3 border-light shadow my-4 mx-auto">
                             <img src="assets/images/cewe.png" alt="bg">
                         </div>
-                        <h1 class="font-estetik" style="font-size: 3rem;">Riski Siapa</h1>
+                        <h1 class="font-estetik" style="font-size: 3rem;">Retno Sulistyarini</h1>
                         <h5 class="mt-3 mb-0">Putri</h5>
-                        <p class="mb-0">Bapak ... & Ibu ...</p>
+                        <p class="mb-0">Bapak Bambang Patmiharto & Ibu Nunuk Widiyawati</p>
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                 <div class="text-center">
                     <h1 class="font-estetik py-3" style="font-size: 2rem;">Waktu Menuju Acara</h1>
                     <div class="border rounded-pill shadow py-2 px-4 mx-2 mb-4">
-                        <div class="row justify-content-center" data-waktu="2024-01-01 00:00:00" id="tampilan-waktu">
+                        <div class="row justify-content-center" data-waktu="2023-07-03 11:00:00" id="tampilan-waktu">
                             <div class="col-3 p-1">
                                 <h2 class="d-inline m-0 p-0" id="hari">0</h2><small class="ms-1 me-0 my-0 p-0 d-inline">Hari</small>
                             </div>
@@ -166,21 +166,22 @@
                     <div class="overflow-x-hidden">
                         <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
                             <h1 class="font-estetik" style="font-size: 2rem;">Akad</h1>
-                            <p>Pukul 10.00 WIB - Selesai</p>
+                            <p>Pukul 07.00 WIB - Selesai</p>
                         </div>
 
                         <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
                             <h1 class="font-estetik" style="font-size: 2rem;">Resepsi</h1>
-                            <p>Pukul 13.00 WIB - Selesai</p>
+                            <p>Pukul 11.00 WIB - 13.00 WIB</p>
                         </div>
                     </div>
 
                     <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
-                        <a href="https://goo.gl/maps/ALZR6FJZU3kxVwN86" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
+                        <a href="https://goo.gl/maps/BoQrq9aWtfwxKr7B6" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
                             <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
                         </a>
                         <p class="mb-0 mt-1 mx-1 pb-4" style="font-size: 0.9rem;">
-                            RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa Tengah 53191
+                            Gedung Pertemuan Wijaya Kusuma KSPKP Tuban <br>
+                            Jl. DR. Wahidin Sudirohusodo No.77, Latsari, Kec. Tuban, Kabupaten Tuban, Jawa Timur 62314
                         </p>
                     </div>
                 </div>
@@ -201,13 +202,13 @@
 
                         <div class="carousel-inner rounded-4">
                             <div class="carousel-item active">
-                                <img src="https://picsum.photos/1280/720?random=1" class="d-block w-100">
+                                <img src="assets/images/gal1.JPG" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://picsum.photos/1280/720?random=2" class="d-block w-100">
+                                <img src="assets/images/gal2.JPG" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://picsum.photos/1280/720?random=3" class="d-block w-100">
+                                <img src="assets/images/gal3.JPG" class="d-block w-100">
                             </div>
                         </div>
 
@@ -231,13 +232,13 @@
 
                         <div class="carousel-inner rounded-4">
                             <div class="carousel-item active">
-                                <img src="https://picsum.photos/1280/720?random=4" class="d-block w-100">
+                                <img src="assets/images/gal4.JPG" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://picsum.photos/1280/720?random=5" class="d-block w-100">
+                                <img src="assets/images/gal5.JPG" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://picsum.photos/1280/720?random=6" class="d-block w-100">
+                                <img src="assets/images/gal6.JPG" class="d-block w-100">
                             </div>
                         </div>
 
@@ -400,9 +401,9 @@
                     <div class="text-center">
                         <h1 class="font-estetik mb-4" style="font-size: 2.2rem;">The Wedding Of</h1>
                         <div class="cropper border border-3 border-light shadow mb-4 mx-auto">
-                            <img src="assets/images/bg.jpeg" alt="bg">
+                            <img src="assets/images/bg.jpg" alt="bg">
                         </div>
-                        <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Wahyu & Riski</h1>
+                        <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Cahyo & Retno</h1>
                         <div id="namatamu"></div>
                         <button type="button" class="btn btn-light shadow rounded-4 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="buka()">
                             <i class="fa-solid fa-envelope-open me-2"></i>Buka Undangan

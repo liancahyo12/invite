@@ -3,8 +3,15 @@
     "/css/app.css": "/css/app.css",
     "/assets/music/sound.mp3": "/assets/music/sound.mp3",
     "/assets/images/bg.jpeg": "/assets/images/bg.jpeg",
+    "/assets/images/bg.jpg": "/assets/images/bg.jpg",
     "/assets/images/cewe.png": "/assets/images/cewe.png",
     "/assets/images/cowo.png": "/assets/images/cowo.png",
+    "/assets/images/gal1.JPG": "/assets/images/gal1.JPG",
+    "/assets/images/gal2.JPG": "/assets/images/gal2.JPG",
+    "/assets/images/gal3.JPG": "/assets/images/gal3.JPG",
+    "/assets/images/gal4.JPG": "/assets/images/gal4.JPG",
+    "/assets/images/gal5.JPG": "/assets/images/gal5.JPG",
+    "/assets/images/gal6.JPG": "/assets/images/gal6.JPG",
     "/assets/images/icon-192x192.png": "/assets/images/icon-192x192.png",
     "/favicon.ico": "/favicon.ico"
 }
