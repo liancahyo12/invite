@@ -261,7 +261,7 @@
             </path>
         </svg>
 
-        <div class="container">
+        {{-- <div class="container">
             <div class="py-4">
                 <div class="text-center">
                     <h1 class="font-estetik mt-0 mb-3" style="font-size: 3rem;">Love Gift</h1>
@@ -297,7 +297,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <section class="m-0 p-0" id="ucapan">
             <div class="container">
