@@ -5,8 +5,10 @@
 )
 
 @section('content')
-    <x-boilerplate::form :route="['boilerplate.store-pernikahan']" method="post">
-        @csrf
+        <div class="row">
+            <a href="/edit-pernikahan/{{ $pernikahan->id }}"><button class="btn btn-primary">Edit</button></a>
+            &nbsp; &nbsp;
+        </div>
         <x-boilerplate::card>
             <x-boilerplate::input name="nama_cowo" id="nama_cowo" label="Nama Lengkap Pengantin Pria*" required/>
             <x-boilerplate::input name="nama_al_cowo" id="nama_al_cowo" label="Nama Panggilan Pengantin Pria*" required/>
@@ -26,9 +28,4 @@
             <x-boilerplate::input name="sambutan3" id="sambutan3" label="Sambutan 3"/>
             <x-boilerplate::input name="sambutan4" id="sambutan4" label="Sambutan 4"/>
         </x-boilerplate::card>
-        <div class="row">
-            &nbsp; &nbsp;
-            {{ Form::submit('Kirim', array('class' => 'btn btn-primary', 'name' => 'submitbutton')) }}
-        </div>
-    </x-boilerplate::form>
 @endsection

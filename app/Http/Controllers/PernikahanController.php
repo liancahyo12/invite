@@ -6,6 +6,7 @@ use App\Http\Requests\StorepernikahanRequest;
 use App\Http\Requests\UpdatepernikahanRequest;
 use App\Models\pernikahan;
 use Spatie\Html\Elements\Form;
+use Auth;
 
 class PernikahanController extends Controller
 {
@@ -14,7 +15,14 @@ class PernikahanController extends Controller
      */
     public function index()
     {
-        return view('boilerplate::pernikahan.index');
+        if (Auth::user()->hasPermission('backend_access')) {
+            return view('boilerplate::pernikahan.index');
+        }
+
+        if (pernikahan::where([['user_id', '=',Auth::user()->id], ['deleted_at', '=', NULL]])->count() == 0) {
+            return view('boilerplate::pernikahan.create');
+        }
+        return view('boilerplate::pernikahan.show');
     }
 
     /**
@@ -30,7 +38,6 @@ class PernikahanController extends Controller
      */
     public function store(StorepernikahanRequest $request)
     {
-        //
     }
 
     /**

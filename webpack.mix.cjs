@@ -15,9 +15,8 @@ const mix = require('laravel-mix');
 //         //
 //     ]);
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css');
-
+mix.copy('resources/js/app.js', 'public/js');
+mix.copy('resources/css/app.css', 'public/css');
 mix.copy('resources/assets/music', 'public/assets/music');
 mix.copy('resources/assets/images', 'public/assets/images');
 mix.copy('resources/favicon.ico', 'public/favicon.ico');

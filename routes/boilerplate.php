@@ -87,11 +87,23 @@ Route::group([
 
         // Pernikahan
         Route::get('/pernikahan', [PernikahanController::class, 'index'])
-            ->middleware(['boilerplateauth', 'ability:admin,lihat_pernikahan'])
+            ->middleware(['boilerplateauth'])
             ->name('pernikahan');
         Route::post('/pernikahan', [PernikahanController::class, 'store'])
-            ->middleware(['boilerplateauth', 'ability:admin,lihat_pernikahan'])
+            ->middleware(['boilerplateauth'])
             ->name('store-pernikahan');
+        Route::get('/show-pernikahan', [PernikahanController::class, 'show'])
+            ->middleware(['boilerplateauth'])
+            ->name('show-pernikahan');
+        Route::get('/edit-pernikahan/{id}', [PernikahanController::class, 'edit'])
+            ->middleware(['boilerplateauth'])
+            ->name('edit-pernikahan');
+        Route::put('/update-pernikahan/{id}', [PernikahanController::class, 'update'])
+            ->middleware(['boilerplateauth'])
+            ->name('update-pernikahan');
+        Route::get('/preview-pernikahan/{id}', [PernikahanController::class, 'preview'])
+            ->middleware(['boilerplateauth'])
+            ->name('preview-pernikahan');
 
         // Rekening
         Route::get('/rekening', [RekeningController::class, 'index'])

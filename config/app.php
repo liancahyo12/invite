@@ -182,6 +182,13 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'pernikahan' => App\Models\pernikahan::class,
+        'bank' => App\Models\bank::class,
+        'komentar' => App\Models\komentar::class,
+        'pengaturan' => App\Models\pengaturan::class,
+        'rekening' => App\Models\rekening::class,
+        'tamu' => App\Models\tamu::class,
+
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 

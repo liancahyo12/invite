@@ -5,9 +5,9 @@
 )
 
 @section('content')
-    <x-boilerplate::form :route="['boilerplate.store-pernikahan']" method="post">
-        @csrf
-        <x-boilerplate::card>
+<x-boilerplate::form :route="['boilerplate.update-pernikahan']" method="put">
+    @csrf
+    <x-boilerplate::card>
             <x-boilerplate::input name="nama_cowo" id="nama_cowo" label="Nama Lengkap Pengantin Pria*" required/>
             <x-boilerplate::input name="nama_al_cowo" id="nama_al_cowo" label="Nama Panggilan Pengantin Pria*" required/>
             <x-boilerplate::input name="nama_cewe" id="nama_cewe" label="Nama Lengkap Pengantin Wanita*" required/>
