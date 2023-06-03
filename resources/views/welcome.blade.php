@@ -66,7 +66,7 @@
                 <h1 class="font-estetik my-4" style="font-size: 2.2rem;">Undangan Pernikahan</h1>
                 <div class="py-4">
                     <div class="cropper border border-3 border-light shadow mx-auto">
-                        <img src="assets/images/bg.jpg" alt="bg">
+                        <img src="assets/images/bg.webp" alt="bg">
                     </div>
                 </div>
                 <h1 class="font-estetik my-4" style="font-size: 3rem;">Cahyo & Retno</h1>
@@ -94,7 +94,7 @@
                 <div class="overflow-x-hidden">
                     <div data-aos="fade-right" data-aos-duration="2000">
                         <div class="cropper border border-3 border-light shadow my-4 mx-auto">
-                            <img src="assets/images/cowo.png" alt="bg">
+                            <img src="assets/images/cowo.webp" alt="bg">
                         </div>
                         <h1 class="font-estetik" style="font-size: 3rem;">Lian Cahyo Wijaya</h1>
                         <h5 class="mt-3 mb-0">Putra</h5>
@@ -105,7 +105,7 @@
 
                     <div data-aos="fade-left" data-aos-duration="2000">
                         <div class="cropper border border-3 border-light shadow my-4 mx-auto">
-                            <img src="assets/images/cewe.png" alt="bg">
+                            <img src="assets/images/cewe.webp" alt="bg">
                         </div>
                         <h1 class="font-estetik" style="font-size: 3rem;">Retno Sulistyarini</h1>
                         <h5 class="mt-3 mb-0">Putri</h5>
@@ -202,13 +202,13 @@
 
                         <div class="carousel-inner rounded-4">
                             <div class="carousel-item active">
-                                <img src="assets/images/gal1.JPG" class="d-block w-100">
+                                <img src="assets/images/gal1.webp" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/images/gal2.JPG" class="d-block w-100">
+                                <img src="assets/images/gal2.webp" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/images/gal3.JPG" class="d-block w-100">
+                                <img src="assets/images/gal3.webp" class="d-block w-100">
                             </div>
                         </div>
 
@@ -232,13 +232,13 @@
 
                         <div class="carousel-inner rounded-4">
                             <div class="carousel-item active">
-                                <img src="assets/images/gal4.JPG" class="d-block w-100">
+                                <img src="assets/images/gal4.webp" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/images/gal5.JPG" class="d-block w-100">
+                                <img src="assets/images/gal5.webp" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="assets/images/gal6.JPG" class="d-block w-100">
+                                <img src="assets/images/gal6.webp" class="d-block w-100">
                             </div>
                         </div>
 
@@ -401,7 +401,7 @@
                     <div class="text-center">
                         <h1 class="font-estetik mb-4" style="font-size: 2.2rem;">The Wedding Of</h1>
                         <div class="cropper border border-3 border-light shadow mb-4 mx-auto">
-                            <img src="assets/images/bg.jpg" alt="bg">
+                            <img src="assets/images/bg.webp" alt="bg">
                         </div>
                         <h1 class="font-estetik my-4" style="font-size: 2.5rem;">Cahyo & Retno</h1>
                         <div id="namatamu"></div>
