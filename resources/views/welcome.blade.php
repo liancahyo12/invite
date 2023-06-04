@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Undangan Pernikahan Wahyu & Riski</title>
-    <meta name="title" content="Undangan Pernikahan Wahyu & Riski">
+    <meta name="title" content="Undangan Pernikahan Cahyo & Retno">
     <meta name="description" content="Website Undangan Pernikahan Wahyu & Riski Secara Online">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/icon-192x192.png">
     <meta name="theme-color" content="#212529">
