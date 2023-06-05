@@ -73,7 +73,7 @@ const buka = async () => {
     document.getElementById('tombol-musik').style.display = 'block';
     audio.play();
     AOS.init();
-    await login();
+    // await login();
     timer();
 };
 
@@ -108,13 +108,13 @@ const balasan = async (button) => {
     button.innerText = 'Loading...';
 
     let id = button.getAttribute('data-uuid').toString();
-    let token = localStorage.getItem('token') ?? '';
+    // let token = localStorage.getItem('token') ?? '';
 
-    if (token.length == 0) {
-        alert('Terdapat kesalahan, token kosong !');
-        window.location.reload();
-        return;
-    }
+    // if (token.length == 0) {
+    //     alert('Terdapat kesalahan, token kosong !');
+    //     window.location.reload();
+    //     return;
+    // }
 
     const BALAS = document.getElementById('balasan');
     BALAS.innerHTML = renderLoading(1);
@@ -126,7 +126,7 @@ const balasan = async (button) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token
+            // 'Authorization': 'Bearer ' + token
         }
     };
 
@@ -175,14 +175,14 @@ const balasan = async (button) => {
 const kirimBalasan = async () => {
     let nama = document.getElementById('formnama').value;
     let komentar = document.getElementById('formpesan').value;
-    let token = localStorage.getItem('token') ?? '';
+    // let token = localStorage.getItem('token') ?? '';
     let id = document.getElementById('idbalasan').value;
 
-    if (token.length == 0) {
-        alert('Terdapat kesalahan, token kosong !');
-        window.location.reload();
-        return;
-    }
+    // if (token.length == 0) {
+    //     alert('Terdapat kesalahan, token kosong !');
+    //     window.location.reload();
+    //     return;
+    // }
 
     if (nama.length == 0) {
         alert('nama tidak boleh kosong');
@@ -209,7 +209,7 @@ const kirimBalasan = async () => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token
+            // 'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify({
             nama: nama,
@@ -390,20 +390,20 @@ const pagination = (() => {
 const ucapan = async () => {
     const UCAPAN = document.getElementById('daftarucapan');
     UCAPAN.innerHTML = renderLoading(pagination.getPer());
-    let token = localStorage.getItem('token') ?? '';
+    // let token = localStorage.getItem('token') ?? '';
 
-    if (token.length == 0) {
-        alert('Terdapat kesalahan, token kosong !');
-        window.location.reload();
-        return;
-    }
+    // if (token.length == 0) {
+    //     alert('Terdapat kesalahan, token kosong !');
+    //     window.location.reload();
+    //     return;
+    // }
 
     const REQ = {
         method: 'GET',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token
+            // 'Authorization': 'Bearer ' + token
         }
     };
 
@@ -433,55 +433,55 @@ const ucapan = async () => {
         .catch((err) => alert(err));
 };
 
-const login = async () => {
-    document.getElementById('daftarucapan').innerHTML = renderLoading(pagination.getPer());
-    let body = document.querySelector('body');
+// const login = async () => {
+//     document.getElementById('daftarucapan').innerHTML = renderLoading(pagination.getPer());
+//     let body = document.querySelector('body');
 
-    const REQ = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            email: body.getAttribute('data-email').toString(),
-            password: body.getAttribute('data-password').toString()
-        })
-    };
+//     const REQ = {
+//         method: 'POST',
+//         headers: {
+//             'Accept': 'application/json',
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({
+//             email: body.getAttribute('data-email').toString(),
+//             password: body.getAttribute('data-password').toString()
+//         })
+//     };
 
-    await fetch(body.getAttribute('data-url') + '/api/login', REQ)
-        .then((res) => res.json())
-        .then((res) => {
-            if (res.code == 200) {
-                localStorage.removeItem('token');
-                localStorage.setItem('token', res.data.token);
-                ucapan();
-            }
+//     await fetch(body.getAttribute('data-url') + '/api/login', REQ)
+//         .then((res) => res.json())
+//         .then((res) => {
+//             if (res.code == 200) {
+//                 localStorage.removeItem('token');
+//                 localStorage.setItem('token', res.data.token);
+//                 ucapan();
+//             }
 
-            if (res.error.length != 0) {
-                alert('Terdapat kesalahan, ' + res.error[0]);
-                window.location.reload();
-                return;
-            }
-        })
-        .catch(() => {
-            alert('Terdapat kesalahan, otomatis reload halaman');
-            window.location.reload();
-            return;
-        });
-};
+//             if (res.error.length != 0) {
+//                 alert('Terdapat kesalahan, ' + res.error[0]);
+//                 window.location.reload();
+//                 return;
+//             }
+//         })
+//         .catch(() => {
+//             alert('Terdapat kesalahan, otomatis reload halaman');
+//             window.location.reload();
+//             return;
+//         });
+// };
 
 const kirim = async () => {
     let nama = document.getElementById('formnama').value;
     let hadir = document.getElementById('hadiran').value;
     let komentar = document.getElementById('formpesan').value;
-    let token = localStorage.getItem('token') ?? '';
+    // let token = localStorage.getItem('token') ?? '';
 
-    if (token.length == 0) {
-        alert('Terdapat kesalahan, token kosong !');
-        window.location.reload();
-        return;
-    }
+    // if (token.length == 0) {
+    //     alert('Terdapat kesalahan, token kosong !');
+        // window.location.reload();
+    //     return;
+    // }
 
     if (nama.length == 0) {
         alert('nama tidak boleh kosong');
@@ -512,7 +512,7 @@ const kirim = async () => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token
+            // 'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify({
             nama: nama,
