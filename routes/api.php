@@ -19,16 +19,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('/api')->group(function () {
-
-    Route::prefix('/comment')->controller(CommentController::class)->group(function () {
-        Route::get('/all', 'all');
-        Route::get('/', 'index');
-        Route::post('/', 'create');
-        Route::options('/');
-
-        Route::get('/{id}', 'show');
-        Route::delete('/{id}', 'destroy');
-        Route::options('/{id}');
-    });
-});

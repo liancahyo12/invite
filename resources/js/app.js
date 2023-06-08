@@ -73,7 +73,7 @@ const buka = async () => {
     document.getElementById('tombol-musik').style.display = 'block';
     audio.play();
     AOS.init();
-    // await login();
+    await login();
     timer();
 };
 
@@ -421,11 +421,11 @@ const ucapan = async () => {
             }
 
             if (res.error.length != 0) {
-                if (res.error[0] == 'Expired token') {
-                    alert('Terdapat kesalahan, token expired !');
-                    window.location.reload();
-                    return;
-                }
+                // if (res.error[0] == 'Expired token') {
+                //     alert('Terdapat kesalahan, token expired !');
+                //     window.location.reload();
+                //     return;
+                // }
 
                 alert(res.error[0]);
             }
@@ -433,43 +433,44 @@ const ucapan = async () => {
         .catch((err) => alert(err));
 };
 
-// const login = async () => {
-//     document.getElementById('daftarucapan').innerHTML = renderLoading(pagination.getPer());
-//     let body = document.querySelector('body');
+const login = async () => {
+    document.getElementById('daftarucapan').innerHTML = renderLoading(pagination.getPer());
+    let body = document.querySelector('body');
+    ucapan();
 
-//     const REQ = {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             email: body.getAttribute('data-email').toString(),
-//             password: body.getAttribute('data-password').toString()
-//         })
-//     };
+    // const REQ = {
+    //     method: 'POST',
+    //     headers: {
+    //         'Accept': 'application/json',
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         email: body.getAttribute('data-email').toString(),
+    //         password: body.getAttribute('data-password').toString()
+    //     })
+    // };
 
-//     await fetch(body.getAttribute('data-url') + '/api/login', REQ)
-//         .then((res) => res.json())
-//         .then((res) => {
-//             if (res.code == 200) {
-//                 localStorage.removeItem('token');
-//                 localStorage.setItem('token', res.data.token);
-//                 ucapan();
-//             }
+    // await fetch(body.getAttribute('data-url') + '/api/login', REQ)
+    //     .then((res) => res.json())
+    //     .then((res) => {
+    //         if (res.code == 200) {
+    //             localStorage.removeItem('token');
+    //             localStorage.setItem('token', res.data.token);
+    //             ucapan();
+    //         }
 
-//             if (res.error.length != 0) {
-//                 alert('Terdapat kesalahan, ' + res.error[0]);
-//                 window.location.reload();
-//                 return;
-//             }
-//         })
-//         .catch(() => {
-//             alert('Terdapat kesalahan, otomatis reload halaman');
-//             window.location.reload();
-//             return;
-//         });
-// };
+    //         if (res.error.length != 0) {
+    //             alert('Terdapat kesalahan, ' + res.error[0]);
+    //             window.location.reload();
+    //             return;
+    //         }
+    //     })
+    //     .catch(() => {
+    //         alert('Terdapat kesalahan, otomatis reload halaman');
+    //         window.location.reload();
+    //         return;
+    //     });
+};
 
 const kirim = async () => {
     let nama = document.getElementById('formnama').value;
@@ -516,7 +517,7 @@ const kirim = async () => {
         },
         body: JSON.stringify({
             nama: nama,
-            hadir: hadir == 1,
+            kehadiran: hadir == 1,
             komentar: komentar
         })
     };

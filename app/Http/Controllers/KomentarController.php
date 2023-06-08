@@ -5,31 +5,34 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorekomentarRequest;
 use App\Http\Requests\UpdatekomentarRequest;
 use App\Models\komentar;
-use App\Response\JsonResponse;
+// use App\Response\JsonResponse;
+use Illuminate\Http\Request;
+use Auth;
 
 class KomentarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-     private $json;
+    // private $json;
 
-    public function __construct(JsonResponse $json)
-    {
-        $this->json = $json;
-    }
+    // public function __construct(JsonResponse $json)
+    // {
+    //     $this->json = $json;
+    // }
 
     private function getInnerkomentar(string $id)
     {
         return komentar::select(['uuid', 'nama', 'kehadiran', 'komentar', 'created_at'])
-            ->where('user_id', context()->user->id)
+            ->where('pernikahan_id', 1)
             ->where('parent_id', $id)
             ->orderBy('id')
             ->get()
             ->map(
                 function ($val) {
-                    $val->created_at = $val->created_at->diffForHumans();
-                    $val->komentar = $this->getInnerkomentar($val->uuid);
+                    $val->created_at;
+                    // $val->created_at = $val->created_at->diffForHumans();
+                    $val->comment = $this->getInnerkomentar($val->uuid);
                     return $val;
                 }
             );
@@ -42,50 +45,56 @@ class KomentarController extends Controller
             'per' => ['max:3']
         ]);
 
-        if ($valid->fails()) {
-            return $this->json->error($valid->messages(), 400);
-        }
+        // if ($valid->fails()) {
+        //     return response()
+        //     ->json([$valid->messages()]);
+        // }
 
-        $valid->next = intval($valid->next);
-        $valid->per = intval($valid->per);
+        $request->next = intval($request->next);
+        $request->per = intval($request->per);
 
-        $data = komentar::select(['uuid', 'nama', 'hadir', 'komentar', 'created_at'])
-            ->where('user_id', context()->user->id)
+        $data = komentar::select(['uuid', 'nama', 'kehadiran', 'komentar', 'created_at'])
+            ->where('pernikahan_id', 1)
             ->whereNull('parent_id')
             ->orderBy('id', 'DESC');
 
-        if ($valid->next >= 0 && $valid->per > 0) {
-            $data = $data->limit($valid->per)->offset($valid->next);
+        if ($request->next >= 0 && $request->per > 0) {
+            $data = $data->limit($request->per)->offset($request->next);
         }
 
         $data = $data->get()
             ->map(
                 function ($val) {
-                    $val->created_at = $val->created_at->diffForHumans();
-                    $val->komentar = $this->getInnerkomentar($val->uuid);
+                    // $val->created_at = $val->created_at->diffForHumans();
+                    $val->created_at;
+                    // $val->komentar = $this->getInnerkomentar($val->uuid);
+                    $val->comment = $this->getInnerkomentar($val->uuid);
                     return $val;
                 }
             );
 
-        return $this->json->success($data, 200);
+        return response()
+            ->json(['code' => 200, 'data' => $data, 'error'=>[]]);
     }
 
     public function all(Request $request)
     {
-        if ($request->get('id', '') !== env('JWT_KEY')) {
-            return $this->json->error(['unauthorized'], 401);
-        }
+        // if ($request->get('id', '') !== env('JWT_KEY')) {
+        //     return $this->json->error(['unauthorized'], 401);
+        // }
 
         $data = komentar::orderBy('id', 'DESC')
             ->get()
             ->map(
                 function ($val) {
-                    $val->created_at = $val->created_at->diffForHumans();
+                    // $val->created_at = $val->created_at->diffForHumans();
+                    $val->created_at;
                     return $val;
                 }
             );
 
-        return $this->json->success($data, 200);
+        return response()
+            ->json(['code' => 200, 'data'=> $data, 'error'=>[]]);
     }
 
     public function show_api(string $id)
@@ -155,7 +164,7 @@ class KomentarController extends Controller
             [
                 'id' => ['str', 'trim', 'max:37'],
                 'nama' => ['required', 'str', 'max:50'],
-                'hadir' => ['bool'],
+                'kehadiran' => ['bool'],
                 'komentar' => ['required', 'str', 'max:500'],
                 'user_agent' => ['str', 'trim'],
                 'ip' => ['str', 'trim', 'max:50']
