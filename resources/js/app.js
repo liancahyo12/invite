@@ -69,7 +69,7 @@ const timer = () => {
 };
 
 const buka = async () => {
-    // document.getElementById('loading').style.display = 'none';
+    document.getElementById('loading').style.display = 'none';
     document.getElementById('tombol-musik').style.display = 'block';
     audio.play();
     AOS.init();
