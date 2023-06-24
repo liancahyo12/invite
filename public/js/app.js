@@ -282,7 +282,7 @@ const renderCard = (data) => {
     <div class="card-body bg-light shadow p-3 m-0 rounded-4" id="${data.uuid}">
         <div class="d-flex flex-wrap justify-content-between align-items-center">
             <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
-                <strong class="me-1">${escapeHtml(data.nama)}</strong>${data.hadir ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fa-solid fa-circle-xmark text-danger"></i>'}
+                <strong class="me-1">${escapeHtml(data.nama)}</strong>${data.kehadiran ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fa-solid fa-circle-xmark text-danger"></i>'}
             </p>
             <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${data.created_at}</small>
         </div>
