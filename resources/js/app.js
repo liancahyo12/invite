@@ -145,7 +145,7 @@ const balasan = async (button) => {
                         <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                             <strong>${escapeHtml(res.data.nama)}</strong>
                         </p>
-                        <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${res.data.created_at}</small>
+                        <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${res.data.created}</small>
                     </div>
                     <hr class="text-dark my-1">
                     <p class="text-dark m-0 p-0" style="white-space: pre-line">${escapeHtml(res.data.komentar)}</p>
@@ -263,7 +263,7 @@ const innerCard = (comment) => {
                 <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                     <strong>${escapeHtml(data.nama)}</strong>
                 </p>
-                <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${data.created_at}</small>
+                <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${data.created}</small>
             </div>
             <hr class="text-dark my-1">
             <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${escapeHtml(data.komentar)}</p>
@@ -284,7 +284,7 @@ const renderCard = (data) => {
             <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
                 <strong class="me-1">${escapeHtml(data.nama)}</strong>${data.kehadiran ? '<i class="fa-solid fa-circle-check text-success"></i>' : '<i class="fa-solid fa-circle-xmark text-danger"></i>'}
             </p>
-            <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${data.created_at}</small>
+            <small class="text-dark m-0 p-0" style="font-size: 0.75rem;">${data.created}</small>
         </div>
         <hr class="text-dark my-1">
         <p class="text-dark mt-0 mb-1 mx-0 p-0" style="white-space: pre-line">${escapeHtml(data.komentar)}</p>

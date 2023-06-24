@@ -31,8 +31,8 @@ class KomentarController extends Controller
             ->get()
             ->map(
                 function ($val) {
-                    $val->created_at;
-                    // $val->created_at = $val->created_at->diffForHumans();
+                    // $val->created_at;
+                    $val->created = $val->created_at->diffForHumans();
                     $val->comment = $this->getInnerkomentar($val->uuid);
                     return $val;
                 }
@@ -66,8 +66,8 @@ class KomentarController extends Controller
         $data = $data->get()
             ->map(
                 function ($val) {
-                    // $val->created_at = $val->created_at->diffForHumans();
-                    $val->created_at;
+                    $val->created = $val->created_at->diffForHumans();
+                    // $val->created_at;
                     // $val->komentar = $this->getInnerkomentar($val->uuid);
                     $val->comment = $this->getInnerkomentar($val->uuid);
                     return $val;
@@ -88,8 +88,8 @@ class KomentarController extends Controller
             ->get()
             ->map(
                 function ($val) {
-                    // $val->created_at = $val->created_at->diffForHumans();
-                    $val->created_at;
+                    $val->created = $val->created_at->diffForHumans();
+                    // $val->created_at;
                     return $val;
                 }
             );
@@ -146,9 +146,9 @@ class KomentarController extends Controller
         $data['uuid'] = Str::uuid();
 
         $data = komentar::create($data);
-        // $data->created_at = $data->created_at->diffForHumans();
-        $data->created_at = $data->created_at;
-        
+        $data->created = $data->created_at->diffForHumans();
+        // $data->created_at = $data->created_at;
+
         return response()
             ->json(['code' => 201, 'data'=> $data, 'error'=>[]]);
         
@@ -176,8 +176,8 @@ class KomentarController extends Controller
             ->json(['code' => 40, 'error'=>['not found']]);
         }
 
-        // $data->created_at = $data->created_at->diffForHumans();
-        $data->created_at = $data->created_at;
+        $data->created = $data->created_at->diffForHumans();
+        // $data->created_at = $data->created_at;
 
         return response()
             ->json(['code' => 200, 'data'=> $data, 'error'=>[]]);
