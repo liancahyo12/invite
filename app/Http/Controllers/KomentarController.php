@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatekomentarRequest;
 use App\Models\komentar;
 // use App\Response\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Auth;
 
 class KomentarController extends Controller
@@ -97,37 +98,6 @@ class KomentarController extends Controller
             ->json(['code' => 200, 'data'=> $data, 'error'=>[]]);
     }
 
-    public function show_api(string $id)
-    {
-        $valid = Validator::make(
-            [
-                'id' => $id
-            ],
-            [
-                'id' => ['required', 'str', 'trim', 'max:37']
-            ]
-        );
-
-        if ($valid->fails()) {
-            return $this->json->error($valid->messages(), 400);
-        }
-
-        $data = komentar::where('uuid', $valid->id)
-            ->where('user_id', context()->user->id)
-            ->limit(1)
-            ->select(['nama', 'komentar', 'created_at'])
-            ->first()
-            ->fail();
-
-        if (!$data) {
-            return $this->json->error(['not found'], 404);
-        }
-
-        $data->created_at = $data->created_at->diffForHumans();
-
-        return $this->json->success($data, 200);
-    }
-
     public function destroy_api(string $id, Request $request)
     {
         if ($request->get('id', '') !== env('JWT_KEY')) {
@@ -153,37 +123,64 @@ class KomentarController extends Controller
 
     public function create_api(Request $request)
     {
-        $valid = Validator::make(
-            array_merge(
-                $request->only(['id', 'nama', 'hadir', 'komentar']),
-                [
-                    'ip' => $request->ip(),
-                    'user_agent' => $request->server('HTTP_USER_AGENT')
-                ]
-            ),
-            [
-                'id' => ['str', 'trim', 'max:37'],
-                'nama' => ['required', 'str', 'max:50'],
-                'kehadiran' => ['bool'],
-                'komentar' => ['required', 'str', 'max:500'],
-                'user_agent' => ['str', 'trim'],
-                'ip' => ['str', 'trim', 'max:50']
-            ]
-        );
+        $valid = $this->validate($request, [
+            'id' => 'string',
+            'nama' => 'required|string|max:50',
+            'kehadiran' => 'bool',
+            'komentar' => 'required|string|max:500',
+            'user_agent' => 'string',
+            'ip' => 'string|max:50'
+        ]);
 
-        if ($valid->fails()) {
-            return $this->json->error($valid->messages(), 400);
+        // if ($valid->fails()) {
+        //     return $this->json->error($valid->messages(), 400);
+        // }
+
+        // $data = $valid->except(['id']);
+        $data['parent_id'] = empty($request->id) ? null : $request->id;
+        // $data['uuid'] = Uuid::uuid4()->toString();
+        $data['nama'] = $request->nama;
+        $data['komentar'] = $request->komentar;
+        $data['kehadiran'] = $request->kehadiran;
+        $data['pernikahan_id'] = 1;
+        $data['uuid'] = Str::uuid();
+
+        $data = komentar::create($data);
+        // $data->created_at = $data->created_at->diffForHumans();
+        $data->created_at = $data->created_at;
+        
+        return response()
+            ->json(['code' => 201, 'data'=> $data, 'error'=>[]]);
+        
+        
+    }
+
+    public function show_api($id)
+    {
+        // $valid = $this->validate($request, [
+        //     'id' => 'required|string|trim|max:37',
+        // ]);
+
+        // if ($valid->fails()) {
+        //     return $this->json->error($valid->messages(), 400);
+        // }
+
+        $data = komentar::where('uuid', $id)
+            ->where('pernikahan_id', 1)
+            ->limit(1)
+            ->select(['nama', 'komentar', 'created_at'])
+            ->first();
+
+        if (!$data) {
+            return response()
+            ->json(['code' => 40, 'error'=>['not found']]);
         }
 
-        $data = $valid->except(['id']);
-        $data['parent_id'] = empty($valid->id) ? null : $valid->id;
-        $data['uuid'] = Uuid::uuid4()->toString();
-        $data['user_id'] = context()->user->id;
+        // $data->created_at = $data->created_at->diffForHumans();
+        $data->created_at = $data->created_at;
 
-        $data = komentar::create($data)->except(['uuid', 'parent_id', 'id', 'user_id', 'user_agent', 'ip', 'updated_at']);
-        $data->created_at = $data->created_at->diffForHumans();
-
-        return $this->json->success($data, 201);
+        return response()
+            ->json(['code' => 200, 'data'=> $data, 'error'=>[]]);
     }
 
     public function index()

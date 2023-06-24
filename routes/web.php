@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KomentarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,16 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('/api')->group(function () {
 
-Route::prefix('/comment')->controller(KomentarController::class)->group(function () {
-    Route::get('/all', 'all');
-    Route::get('/', 'index_api');
-    Route::post('/', 'create_api');
-    Route::options('/');
-
-    Route::get('/{id}', 'show_api');
-    Route::delete('/{id}', 'destroy_api');
-    Route::options('/{id}');
-});
-});

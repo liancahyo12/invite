@@ -14,6 +14,8 @@ class komentar extends Model
         'nama',
         'komentar',
         'kehadiran',
+        'uuid',
+        'parent_id',
     ];
 
     public function pernikahan()

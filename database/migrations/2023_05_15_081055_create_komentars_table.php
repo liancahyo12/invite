@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('pernikahan_id')->references('id')->on('pernikahans')->onDelete('cascade');
             $table->string('nama', 100);
             $table->string('komentar', 255);
-            $table->tinyInteger('kehadiran')->comment('1 =  hadir, 2 = mungkin, 3= berhalangan');
+            $table->tinyInteger('kehadiran')->nullable()->comment('1 =  hadir, 2 = mungkin, 3= berhalangan');
             $table->string('ip')->nullable();
             $table->text('user_agent')->nullable();
             $table->string('parent_id')->nullable();

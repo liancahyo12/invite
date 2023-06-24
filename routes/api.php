@@ -15,7 +15,18 @@ use App\Http\Controllers\KomentarController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
+
+Route::prefix('/comment')->controller(KomentarController::class)->group(function () {
+    Route::get('/all', 'all');
+    Route::get('/', 'index_api');
+    Route::post('/', 'create_api');
+    Route::options('/');
+
+    Route::get('/{id}', 'show_api');
+    Route::delete('/{id}', 'destroy_api');
+    Route::options('/{id}');
+});
