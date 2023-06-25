@@ -261,44 +261,6 @@
             </path>
         </svg>
 
-        {{-- <div class="container">
-            <div class="py-4">
-                <div class="text-center">
-                    <h1 class="font-estetik mt-0 mb-3" style="font-size: 3rem;">Love Gift</h1>
-                    <p class="mb-1" style="font-size: 0.9rem;">
-                        Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami,
-                        dapat melalui :
-                    </p>
-
-                    <div class="overflow-x-hidden">
-                        <div class="row justify-content-center">
-                            <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" data-aos="fade-down" data-aos-duration="1500">
-                                <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/1200px-BNI_logo.svg.png" class="img-fluid rounded" width="150" alt="bni">
-                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">
-                                    No. Rekening 123456789
-                                </p>
-                                <p class="card-text" style="font-size: 0.9rem;">
-                                    a.n Lorem ipsum dolor
-                                </p>
-                                <button class="btn btn-light btn-sm rounded-4" data-nomer="123456789" onclick="salin(this)">Salin No. Rekening</button>
-                            </div>
-
-                            <div class="col-12 card-body border rounded-4 shadow p-3 m-3" style="max-width: 25rem;" data-aos="fade-down" data-aos-duration="1500">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/BANK_BRI_logo.svg/2560px-BANK_BRI_logo.svg.png" class="img-fluid rounded" width="150" alt="bri">
-                                <p class="card-text mt-3 mb-0" style="font-size: 0.9rem;">
-                                    No. Rekening 123456789
-                                </p>
-                                <p class="card-text" style="font-size: 0.9rem;">
-                                    a.n Lorem ipsum dolor
-                                </p>
-                                <button class="btn btn-light btn-sm rounded-4" data-nomer="123456789" onclick="salin(this)">Salin No. Rekening</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
         <section class="m-0 p-0" id="ucapan">
             <div class="container">
                 <div class="card-body border rounded-4 shadow p-3">
@@ -374,12 +336,16 @@
                     <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                         <div class="col-auto">
                             <small class="text-light">
-                                Build with<i class="fa-solid fa-heart mx-1"></i>Dewanakl
+                                Build with<i class="fa-solid fa-heart mx-1"></i>CahJaya
                             </small>
                         </div>
                         <div class="col-auto">
                             <small>
-                                <i class="fa-brands fa-github me-1"></i><a target="_blank" href="https://github.com/dewanakl/undangan">dewanakl</a>
+                                Tech Stack
+                                <i class="fa-brands fa-github me-1"></i>
+                                <i class="fa-brands fa-docker me-1"></i>
+                                <i class="fa-brands fa-laravel me-1"></i>
+                                {{-- <a target="_blank" href="https://github.com/dewanakl/undangan">dewanakl</a> --}}
                             </small>
                         </div>
                     </div>
