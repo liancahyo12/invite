@@ -71,7 +71,7 @@
                 </div>
                 <h1 class="font-estetik my-4" style="font-size: 3rem;">Cahyo & Retno</h1>
                 <h4>Senin, 3 Juli 2023</h4>
-                <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-1" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Cahyo%20and%20Retno&details=The%20Wedding%20of%20Cahyo%20and%20Retno%20%7C%2003%20Juli%202023%20%7C%20Jl.%20DR.%20Wahidin%20Sudirohusodo%20No.77,%20Latsari,%20Kec.%20Tuban,%20Kab.%20Tuban,%20Jawa%20Timur%2062314%20%7C%2010.00%20-%2011.00%20WIB&dates=20230703T110000/20230703T130000&location=https://goo.gl/maps/GbMzKC2k5Yap8LPX8">
+                <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-1" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Cahyo%20and%20Retno&details=The%20Wedding%20of%20Cahyo%20and%20Retno%20%7C%2003%20Juli%202023%20%7C%20Jl.%20DR.%20Wahidin%20Sudirohusodo%20No.77,%20Latsari,%20Kec.%20Tuban,%20Kab.%20Tuban,%20Jawa%20Timur%2062314%20%7C%2011.00%20-%2013.00%20WIB&dates=20230703T110000/20230703T130000&location=https://goo.gl/maps/GbMzKC2k5Yap8LPX8">
                     <i class="fa-solid fa-calendar-check me-2"></i>Save The Date
                 </a>
             </div>
